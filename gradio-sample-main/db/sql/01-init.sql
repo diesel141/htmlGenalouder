@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS `devdb`;
+USE `devdb`;
+
+CREATE TABLE IF NOT EXISTS `users`
+(
+  `user_id` INT NOT NULL AUTO_INCREMENT COMMENT 'ユーザID',
+  `user_name` VARCHAR(50) NOT NULL COMMENT 'ユーザ名',
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '作成日時',
+  `updated_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新日時',
+  PRIMARY KEY (`user_id`)
+) COMMENT 'ユーザ';
+
+INSERT INTO `users` VALUES (NULL, 'guest', default, default);
+INSERT INTO `users` VALUES (NULL, 'test', default, default);
